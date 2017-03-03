@@ -39,8 +39,8 @@ defmodule MobileDoc.Mixfile do
   end
 
   defp package do
-    [files: ["lib", "priv", "mix.exs", "README*", "readme*", "LICENSE*", "license*"],
-     contributors: ["Zach Wentz"],
+    [files: ["lib", "mix.exs", "README*", "LICENSE*"],
+     maintainers: ["Zach Wentz"],
      licenses: ["MIT"],
      links: %{"GitHub" => "https://github.com/zkwentz/mobiledoc-text-renderer-elixir"}]
   end
