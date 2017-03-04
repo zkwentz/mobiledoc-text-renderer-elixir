@@ -177,4 +177,23 @@ defmodule MobileDoc.Text.Renderer_0_3_Test do
 
     assert rendered == "Hello Bob"
   end
+
+  test "it renders multiple markers" do
+		mobiledoc = %{
+      "version" => @mobiledoc_version,
+      "atoms" => [],
+			"cards" => [],
+			"markups" => [],
+			"sections" => [
+         [@markup_section_type, "P", [
+           [@markup_marker_type, [], 0, "A multipart "],
+         ]],
+				[@markup_section_type, "P", [
+           [@markup_marker_type, [], 0, "mobiledoc."]
+        ]]
+      ],
+    }
+
+    assert render(mobiledoc) == "A multipart mobiledoc."
+  end
 end

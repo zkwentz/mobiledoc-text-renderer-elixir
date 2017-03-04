@@ -3,7 +3,7 @@ defmodule MobileDoc.Text.Renderer_0_3 do
   def render(%{"sections" => sections, "atoms" => atom_types}, cards \\ %{}, atoms \\ %{}) do
     sections
     |> Enum.reduce("", fn (section, root) ->
-      render_section(section, %{atom_types: atom_types, cards: cards, atoms: atoms})
+      root <> render_section(section, %{atom_types: atom_types, cards: cards, atoms: atoms})
     end)
   end
 
