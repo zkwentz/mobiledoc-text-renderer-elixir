@@ -152,7 +152,7 @@ defmodule MobileDoc.Text.Renderer_0_3_Test do
     defmodule HelloAtom do
       defmodule Text do
         def render(text, _options, _env, _payload) do
-          "Hello #{text}"
+          "@#{text}"
         end
       end
     end
@@ -160,7 +160,7 @@ defmodule MobileDoc.Text.Renderer_0_3_Test do
     mobiledoc = %{
       "version" => @mobiledoc_version,
       "atoms" => [
-        ["hello-atom", "Bob", %{ "id" => 42}]
+        ["hello-atom", "zkwentz@gmail.info", %{ "id" => 42}]
       ],
       "cards" => [],
       "markups" => [],
@@ -175,7 +175,7 @@ defmodule MobileDoc.Text.Renderer_0_3_Test do
       "hello-atom" => HelloAtom
     })
 
-    assert rendered == "Hello Bob"
+    assert rendered == "@zkwentz@gmail.info"
   end
 
   test "it renders multiple markers" do

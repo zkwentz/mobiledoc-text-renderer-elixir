@@ -1,9 +1,9 @@
-defmodule MobileDoc.Mixfile do
+defmodule MobileDoc.Text.Mixfile do
   use Mix.Project
 
   def project do
     [app: :mobiledoc_text,
-     version: "0.0.2",
+     version: "0.0.3",
      elixir: "~> 1.0",
      description: description(),
      package: package(),
